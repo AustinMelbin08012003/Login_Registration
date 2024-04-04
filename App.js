@@ -1,22 +1,22 @@
 import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { createDrawerNavigator } from "@react-navigation/drawer"; // Changed import
 import Homepage from "./components/Homepage";
 import Login from "./components/Login";
 import Registration from "./components/Registration";
 import Recovery from "./components/Recovery";
 import Landing from "./components/Landing";
 
+const Drawer = createDrawerNavigator();
 export default function App() {
-  const Stack = createNativeStackNavigator();
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Home" component={Homepage} />
-        <Stack.Screen name="Login" component={Login} />
-        <Stack.Screen name="Registration" component={Registration} />
-        <Stack.Screen name="Recovery" component={Recovery} />
-        <Stack.Screen name="Landing" component={Landing} />
-      </Stack.Navigator>
+      <Drawer.Navigator>
+        <Drawer.Screen name="Landing" component={Landing} />
+        <Drawer.Screen name="Login" component={Login} />
+        <Drawer.Screen name="Home" component={Homepage} />
+        <Drawer.Screen name="Registration" component={Registration} />
+        <Drawer.Screen name="Recovery" component={Recovery} />
+      </Drawer.Navigator>
     </NavigationContainer>
   );
 }

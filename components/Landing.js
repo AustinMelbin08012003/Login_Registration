@@ -1,61 +1,68 @@
 import * as React from "react";
-import { View, text, Image, StyleSheet, Text } from "react-native";
+import { View, Text, Image, StyleSheet } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { Button } from "react-native-paper";
-import { TextInput } from "react-native-paper";
 
-import logo from "../assets/logo.jpg";
+import logo from "../assets/LODI_CODE.png";
 
 function Landing(props) {
+  
   console.log(props);
   return (
     <View
-      style={{flex: 1, alignItems: "center", justifyContent: "center", backgroundColor: "#a4925b",}}
+      style={{flex: 1, alignItems: "center", justifyContent: "center", backgroundColor: "#2c305f",}}
     >
       <Image source={logo} style={styles.logo} />
-      <Text style={styles.grt}>Welcome to our LODI_CODE</Text>
+      <Text style={styles.team}>Welcome Users!</Text>
+      <Text style={styles.par}></Text>
       <Button
-        style={styles.logout}
+        style={styles.login}
         icon="login"
         mode="contained"
-        onPress={() => props.navigation.navigate("Home")}
+        onPress={() => props.navigation.navigate("Login")}
       >
-        Logout
+        Login
+      </Button>
+      <Button
+        style={styles.Registration}
+        icon="login"
+        mode="contained"
+        onPress={() => props.navigation.navigate("Registration")}
+      >
+        Registration
       </Button>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-    logo: {
-      height: 200,
-      width: 200,
-      marginTop: -50,
-    },
-    login: {
-      marginTop: 10,
-      width: "20%",
-    },
-    passl: {
-      marginTop: 10,
-    },
-    forgot: {
-      color: "purple",
-      fontSize: 10,
-      textAlign: "right",
-    },
-    grt: {
-      color: "purple",
-      fontSize: 30,
-      fontWeight: "1000",
-      textAlign: "center",
-    },
-    logout: {
-      width: "60%",
-      marginTop: 200,
-      backgroundColor: "black",
-    },
-  });  
+  logo: {
+    height: 200,
+    width: 200,
+  },
+  login: {
+    marginTop: 20,
+    width: "60%",
+    backgroundColor: "black",
+  },
+  Registration: {
+    width: "60%",
+    marginTop: 20,
+    backgroundColor: "black",
+  },
+  team: {
+    color: "white",
+    fontSize: 30,
+    fontWeight: "950",
+  },
+  par: {
+    color: "black",
+    fontSize: 30,
+    fontWeight: "500",
+    marginBottom: 10,
+    fontStyle: "italic",
+  },
+});
 
 export default Landing;

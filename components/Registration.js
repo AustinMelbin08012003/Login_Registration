@@ -5,14 +5,14 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { Button } from "react-native-paper";
 import { TextInput } from "react-native-paper";
 
-import logo from "../assets/logo.jpg";
+import logo from "../assets/LODI_CODE.png";
 
 function Registration(props) {
   const [showPassword, setShowPassword] = React.useState(false);
   console.log(props);
   return (
     <View
-      style={{flex: 1, alignItems: "center", justifyContent: "center", backgroundColor: "#a4925b",}}
+      style={{flex: 1, alignItems: "center", justifyContent: "center", backgroundColor: "#2c305f",}}
     >
       <Image source={logo} style={styles.logo} />
       <Text style={styles.create}>Create an Account</Text>
@@ -71,20 +71,20 @@ const styles = StyleSheet.create({
   passl: {
     marginTop: 20,
     marginBottom: 15,
-    width: 250
+    width: "60%",
   },
   usernames: {
     marginBottom: 15,
-    width: 250
+    width: "60%",
   },
   create: {
-    color: "purple",
+    color: "white",
     fontSize: 30,
     fontWeight: "950",
     marginBottom: 20,
   },
   emaill: {
-    width: 250
+    width: "60%",
   }
 });
 
